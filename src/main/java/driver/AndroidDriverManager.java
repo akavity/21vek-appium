@@ -19,9 +19,8 @@ public class AndroidDriverManager {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "14.0");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Medium Phone");
-        capabilities.setCapability(MobileCapabilityType.APP, "D:/stady/QA automation engineer/IT-Academy/class 15/onliner_catalog.xapk");
+        capabilities.setCapability(MobileCapabilityType.APP, "D:/stady/QA automation engineer/IT-Academy/class 15/21vek.apk");
         capabilities.setCapability(NO_RESET, false);
-
         try {
             driver = new AppiumDriver<>(new URL("http://localhost:4723/wd/hub"), capabilities);
         } catch (MalformedURLException e) {
