@@ -6,9 +6,9 @@
     <test name="Medium Phone">
         <parameter name="platform" value="android"/>
         <classes>
-            <class name="CatalogTest">
+            <class name="MainTest">
                 <methods>
-                    <include name=""/>
+                    <include name="navigateThroughThePromo"/>
                 </methods>
             </class>
         </classes>
