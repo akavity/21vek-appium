@@ -8,7 +8,8 @@
         <classes>
             <class name="org.akavity.MainTest">
                 <methods>
-                    <include name="navigateThroughThePromo"/>
+                    <include name="selectPromo"/>
+                    <include name="selectBanner"/>
                 </methods>
             </class>
         </classes>
