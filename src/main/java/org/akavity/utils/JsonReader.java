@@ -1,9 +1,9 @@
 package org.akavity.utils;
 
-import org.akavity.annotations.TestData;
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
+import org.akavity.annotations.TestData;
 import org.testng.annotations.DataProvider;
 
 import java.io.FileNotFoundException;
@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class JsonReader {
-
     @DataProvider
     public Object[][] getData(Method method) throws FileNotFoundException {
         String jsonData = JsonParser.parseReader(new FileReader("src/test/resources/test-data/"
