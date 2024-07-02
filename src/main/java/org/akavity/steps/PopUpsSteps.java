@@ -15,5 +15,4 @@ public class PopUpsSteps {
         Utils.waitUntilClickable(popUps.getAllowButton());
         popUps.getAllowButton().click();
     }
-
 }
