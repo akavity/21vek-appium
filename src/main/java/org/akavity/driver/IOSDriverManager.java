@@ -1,4 +1,4 @@
-package driver;
+package org.akavity.driver;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -8,19 +8,17 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static io.appium.java_client.remote.MobileCapabilityType.NO_RESET;
-
-public class AndroidDriverManager {
+public class IOSDriverManager {
     private AppiumDriver<MobileElement> driver;
 
     public AppiumDriver<MobileElement> createInstance() {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(MobileCapabilityType.UDID, "udid");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "14.0");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Medium Phone");
-        capabilities.setCapability(MobileCapabilityType.APP, "D:/stady/QA automation engineer/IT-Academy/class 15/21vek.apk");
-        capabilities.setCapability(NO_RESET, false);
+        capabilities.setCapability(MobileCapabilityType.APP, "D:/stady/QA automation engineer/IT-Academy/class 15/21vek.apk.apk");
         try {
             driver = new AppiumDriver<>(new URL("http://localhost:4723/wd/hub"), capabilities);
         } catch (MalformedURLException e) {

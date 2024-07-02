@@ -1,6 +1,6 @@
-package driver;
+package org.akavity.driver;
 
-import enums.PlatformType;
+import org.akavity.enums.PlatformType;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 

@@ -1,9 +1,9 @@
-package steps;
+package org.akavity.steps;
 
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
-import pages.ProductListPage;
-import utils.Utils;
+import org.akavity.pages.ProductListPage;
+import org.akavity.utils.Utils;
 
 @Log4j2
 public class ProductListSteps {

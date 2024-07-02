@@ -1,4 +1,4 @@
-package utils;
+package org.akavity.utils;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;

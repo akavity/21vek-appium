@@ -6,7 +6,7 @@
     <test name="Medium Phone">
         <parameter name="platform" value="android"/>
         <classes>
-            <class name="MainTest">
+            <class name="org.akavity.MainTest">
                 <methods>
                     <include name="navigateThroughThePromo"/>
                 </methods>

@@ -1,6 +1,8 @@
+package org.akavity;
+
 import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import driver.DriverFactory;
+import org.akavity.driver.DriverFactory;
 import io.appium.java_client.AppiumDriver;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.annotations.BeforeMethod;
