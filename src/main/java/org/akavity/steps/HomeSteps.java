@@ -13,8 +13,25 @@ public class HomeSteps {
     @Step
     public void clickPromoButton(String text) {
         log.info("Click catalog item: {}", text);
-        SelenideElement element = home.promoButton(text);
+        SelenideElement element = home.getPromoButton(text);
         Utils.waitUntilClickable(element);
         element.click();
+    }
+
+    @Step
+    public void clickBannerButton(String text) {
+        log.info("banner button: {}", text);
+        SelenideElement element = home.getBannerButton(text);
+        Utils.waitUntilClickable(element);
+        element.click();
+    }
+
+    @Step
+    public boolean isUrlDisplayed(String url) {
+        log.info("Make sure the url {} is displayed", url);
+        Utils.sleep(1500);
+        boolean result = home.getChromeUrlField(url).isDisplayed();
+        log.info("Is url displayed: {}", result);
+        return result;
     }
 }

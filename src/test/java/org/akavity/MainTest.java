@@ -3,7 +3,6 @@ package org.akavity;
 import org.akavity.annotations.TestData;
 import org.akavity.models.BannerData;
 import org.akavity.models.PromoData;
-import org.akavity.models.SpecialOfferData;
 import org.akavity.steps.HomeSteps;
 import org.akavity.steps.PopUpsSteps;
 import org.akavity.steps.ProductListSteps;
