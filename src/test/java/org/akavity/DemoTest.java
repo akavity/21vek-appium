@@ -10,26 +10,27 @@ import org.akavity.utils.JsonReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class MainTest extends BaseTest {
+
+public class DemoTest extends BaseTest {
+
     PopUpsSteps popUpsSteps = new PopUpsSteps();
     HomeSteps homeSteps = new HomeSteps();
-    ProductListSteps productList = new ProductListSteps();
-
+    ProductListSteps productListSteps = new ProductListSteps();
 
     @TestData(jsonFile = "promoData", model = "PromoData")
     @Test(description = "Click the promo",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
-    public void selectPromo(PromoData promoData) {
+    void selectPromo(PromoData promoData) {
         popUpsSteps.clickAllowButton();
         homeSteps.clickPromoButton(promoData.getPromo());
 
-        Assert.assertTrue(productList.isTitleDisplayed(promoData.getPromo()));
+        Assert.assertTrue(productListSteps.isTitleDisplayed(promoData.getPromo()));
     }
 
     @TestData(jsonFile = "bannerData", model = "BannerData")
     @Test(description = "Click the banner",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
-    public void selectBanner(BannerData bannerData) {
+    void selectBanner(BannerData bannerData) {
         popUpsSteps.clickAllowButton();
         homeSteps.clickBannerButton(bannerData.getText());
 
