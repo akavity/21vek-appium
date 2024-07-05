@@ -6,8 +6,8 @@ public class ConfigurationFactory {
 
     public String create(String platform) {
 
-        PlatformType mobilePlatform = PlatformType.valueOf(platform.toUpperCase());
         String ConfigurationBrowse = null;
+        PlatformType mobilePlatform = PlatformType.valueOf(platform.toUpperCase());
 
         switch (mobilePlatform) {
 

@@ -19,7 +19,5 @@ public class BaseTest {
         Configuration.browser = new ConfigurationFactory().create(platform);
         SelenideAppium.launchApp();
         SelenideLogger.addListener("allure", new AllureSelenide().screenshots(true));
-        //   WebDriver driver = new DriverFactory().createInstance(platform);
-        //  WebDriverRunner.setWebDriver(driver);
     }
 }
