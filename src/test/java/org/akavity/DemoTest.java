@@ -19,7 +19,7 @@ public class DemoTest extends BaseTest {
     ProductListSteps productListSteps = new ProductListSteps();
 
     @TestData(jsonFile = "promoData", model = "PromoData")
-    @Test(description = "Click the promo",
+    @Test(description = "Checking promo buttons",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     void selectPromo(PromoData promoData) {
         popUpsSteps.clickAllowButton();
@@ -29,7 +29,7 @@ public class DemoTest extends BaseTest {
     }
 
     @TestData(jsonFile = "bannerData", model = "BannerData")
-    @Test(description = "Click the banner",
+    @Test(description = "Checking banner buttons",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     void selectBanner(BannerData bannerData) {
         popUpsSteps.clickAllowButton();
@@ -39,7 +39,7 @@ public class DemoTest extends BaseTest {
     }
 
     @TestData(jsonFile = "specialOfferData", model = "SpecialOfferData")
-    @Test(description = "Click the banner",
+    @Test(description = "Checking special offer buttons",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     void selectSpecialOfferButton(SpecialOfferData specialOffer) {
         popUpsSteps.clickAllowButton();

@@ -1,5 +1,6 @@
 package org.akavity.steps;
 
+import io.appium.java_client.AppiumBy;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.akavity.pages.HomePage;
@@ -7,6 +8,7 @@ import org.akavity.utils.Utils;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.appium.AppiumClickOptions.tap;
+import static com.codeborne.selenide.appium.SelenideAppium.$;
 
 @Log4j2
 public class HomeSteps {
@@ -41,6 +43,7 @@ public class HomeSteps {
     @Step
     public void clickSpecialOfferButton(String text) {
         log.info("Scroll to element: {} and click", text);
+        home.getSpecialOfferChapterField().scrollTo();
         home.getSpecialOfferButton(text)
                 .scrollTo()
                 .click(tap());
@@ -50,8 +53,9 @@ public class HomeSteps {
     public boolean isDiscountTypeLabelDisplayed(String type) {
         log.info("Make sure the discount type label {} is displayed", type);
         Utils.sleep(1500);
+        home.getDiscountTypeLabel(type).scrollTo();
         boolean result = home.getDiscountTypeLabel(type).isDisplayed();
-        log.info("Is  discount type label  displayed: {}", result);
+        log.info("Is  discount type label ... {} ... displayed: {}", type, result);
         return result;
     }
 }
