@@ -1,6 +1,5 @@
 package org.akavity.steps;
 
-import io.appium.java_client.AppiumBy;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.akavity.pages.HomePage;
@@ -8,7 +7,6 @@ import org.akavity.utils.Utils;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.appium.AppiumClickOptions.tap;
-import static com.codeborne.selenide.appium.SelenideAppium.$;
 
 @Log4j2
 public class HomeSteps {
