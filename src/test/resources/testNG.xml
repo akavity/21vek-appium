@@ -6,10 +6,11 @@
     <test name="Medium Phone">
         <parameter name="platform" value="android"/>
         <classes>
-            <class name="org.akavity.MainTest">
+            <class name="org.akavity.DemoTest">
                 <methods>
                     <include name="selectPromo"/>
                     <include name="selectBanner"/>
+                    <include name="selectSpecialOfferButton"/>
                 </methods>
             </class>
         </classes>
