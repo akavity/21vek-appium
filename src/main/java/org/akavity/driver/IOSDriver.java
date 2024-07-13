@@ -18,6 +18,7 @@ public class IOSDriver implements WebDriverProvider {
     @CheckReturnValue
     @Nonnull
     public WebDriver createDriver(Capabilities capabilities) {
+
         XCUITestOptions options = new XCUITestOptions();
         options.setDeviceName("iPhone 13");
         options.setApp(System.getProperty("user.dir") + "/apps/iOS-Simulator-MyApp.zip");

@@ -19,6 +19,7 @@ public class AndroidDriver implements WebDriverProvider {
     @CheckReturnValue
     @Nonnull
     public WebDriver createDriver(Capabilities capabilities) {
+
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
         options.setPlatformName("Android");

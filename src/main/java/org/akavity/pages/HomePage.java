@@ -27,7 +27,6 @@ public class HomePage {
         return $(AppiumBy.xpath("//android.widget.TextView[@text='Все акции']/.." +
                 "//android.widget.Button[@content-desc='" + text + "']"));
     }
-    //android.widget.Button[@content-desc="Уцененные товары"]
 
     public SelenideAppiumElement getDiscountTypeLabel(String type) {
         return $(AppiumBy.xpath("(//android.widget.TextView[@text='Все акции']/.." +
