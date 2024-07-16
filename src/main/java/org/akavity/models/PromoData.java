@@ -9,4 +9,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PromoData {
     String promo;
+    String title;
 }
