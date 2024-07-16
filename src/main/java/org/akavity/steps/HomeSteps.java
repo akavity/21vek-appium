@@ -1,5 +1,6 @@
 package org.akavity.steps;
 
+import com.codeborne.selenide.appium.SelenideAppiumElement;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.akavity.pages.HomePage;
@@ -15,10 +16,19 @@ public class HomeSteps {
 
     @Step
     public void clickPromoButton(String text) {
-        log.info("Click catalog item: {}", text);
-        home.getPromoButton(text)
-                .shouldBe(visible)
-                .click(tap());
+        SelenideAppiumElement el = home.getPromoButton(text);
+        int count = 0;
+        Utils.sleep(500);
+        while (count < 3) {
+            if (el.isDisplayed()) {
+                log.info("Promo item is displayed: Click promo item");
+                el.click(tap());
+            } else {
+                log.info("Promo item isn't displayed: Swipe promo item");
+                Utils.swipeElementLeft(1000, 442, 180, 442, 1);
+            }
+            count++;
+        }
     }
 
     @Step
