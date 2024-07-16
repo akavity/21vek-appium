@@ -21,17 +21,17 @@ public class DemoTest extends BaseTest {
     @TestData(jsonFile = "promoData", model = "PromoData")
     @Test(description = "Checking promo buttons",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
-    void selectPromo(PromoData promoData) {
+    public void selectPromo(PromoData promoData) {
         popUpsSteps.clickAllowButton();
         homeSteps.clickPromoButton(promoData.getPromo());
 
-        Assert.assertTrue(productListSteps.isTitleDisplayed(promoData.getPromo()));
+        Assert.assertTrue(productListSteps.isTitleDisplayed(promoData.getTitle()));
     }
 
     @TestData(jsonFile = "bannerData", model = "BannerData")
     @Test(description = "Checking banner buttons",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
-    void selectBanner(BannerData bannerData) {
+    public void selectBanner(BannerData bannerData) {
         popUpsSteps.clickAllowButton();
         homeSteps.clickBannerButton(bannerData.getText());
 
@@ -41,7 +41,7 @@ public class DemoTest extends BaseTest {
     @TestData(jsonFile = "specialOfferData", model = "SpecialOfferData")
     @Test(description = "Checking special offer buttons",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
-    void selectSpecialOfferButton(SpecialOfferData specialOffer) {
+    public void selectSpecialOfferButton(SpecialOfferData specialOffer) {
         popUpsSteps.clickAllowButton();
         homeSteps.clickSpecialOfferButton(specialOffer.getOffer());
 
