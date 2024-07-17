@@ -15,6 +15,8 @@ import java.time.Duration;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class Utils {
+    private static int START_X = 1000;
+    private static int END_X = 180;
 
     public static void sleep(long millis) {
         try {
@@ -47,6 +49,15 @@ public class Utils {
                     .release().perform();
             count++;
         } while (count < maxSwipeCounts);
+    }
+
+    public static void swipeElementLeft(int y) {
+        TouchAction touch = new TouchAction(AppiumDriverRunner.getAndroidDriver());
+        touch.press(PointOption.point(START_X, y))      // startY
+                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
+                .moveTo(PointOption.point(END_X, y))    // endY
+                .release().perform();
+
     }
 
     public static void swipeElementLeft(int startX, int startY, int endX, int endY) {
