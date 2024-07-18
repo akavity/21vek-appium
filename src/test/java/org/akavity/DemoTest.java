@@ -18,6 +18,7 @@ public class DemoTest extends BaseTest {
     ProductListSteps productListSteps = new ProductListSteps();
     TabBarSteps tabBarSteps = new TabBarSteps();
     CatalogSteps catalogSteps = new CatalogSteps();
+    AccountSteps accountSteps = new AccountSteps();
 
     @TestData(jsonFile = "promoData", model = "PromoData")
     @Test(description = "Checking promo buttons",
@@ -60,5 +61,14 @@ public class DemoTest extends BaseTest {
         catalogSteps.clickSubsectionButton(catalog.getSubsectionSecond());
 
         Assert.assertTrue(productListSteps.isTitleDisplayed(catalog.getTitle()));
+    }
+
+    @Test
+    public void selectLocation() {
+        popUpsSteps.clickAllowButton();
+        tabBarSteps.selectTabBarItem("Аккаунт");
+        accountSteps.changeLocation("Витебск");
+
+        Assert.assertTrue(accountSteps.isCityDisplayed(" г. Витебск"));
     }
 }
