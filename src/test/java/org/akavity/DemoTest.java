@@ -1,10 +1,7 @@
 package org.akavity;
 
 import org.akavity.annotations.TestData;
-import org.akavity.models.BannerData;
-import org.akavity.models.CatalogData;
-import org.akavity.models.PromoData;
-import org.akavity.models.SpecialOfferData;
+import org.akavity.models.*;
 import org.akavity.steps.*;
 import org.akavity.utils.JsonReader;
 import org.testng.Assert;
@@ -63,12 +60,14 @@ public class DemoTest extends BaseTest {
         Assert.assertTrue(productListSteps.isTitleDisplayed(catalog.getTitle()));
     }
 
-    @Test
-    public void selectLocation() {
+    @TestData(jsonFile = "locationData", model = "LocationData")
+    @Test(description = "Select location",
+            dataProviderClass = JsonReader.class, dataProvider = "getData")
+    public void selectLocation(LocationData location) {
         popUpsSteps.clickAllowButton();
-        tabBarSteps.selectTabBarItem("Аккаунт");
-        accountSteps.changeLocation("Витебск");
+        tabBarSteps.selectTabBarItem(location.getItem());
+        accountSteps.changeLocation(location.getCityButton());
 
-        Assert.assertTrue(accountSteps.isCityDisplayed(" г. Витебск"));
+        Assert.assertTrue(accountSteps.isCityDisplayed(location.getCityField()));
     }
 }
