@@ -7,7 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PromoData {
-    String promo;
+public class CatalogData {
+    String item;
+    String section;
+    String subsectionFirst;
+    String subsectionSecond;
     String title;
 }

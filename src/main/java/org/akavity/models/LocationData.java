@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PromoData {
-    String promo;
-    String title;
+public class LocationData {
+    String item;
+    String cityButton;
+    String cityField;
 }

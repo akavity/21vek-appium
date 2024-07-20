@@ -11,6 +11,8 @@
                     <include name="selectPromo"/>
                     <include name="selectBanner"/>
                     <include name="selectSpecialOfferButton"/>
+                    <include name="moveThroughCatalog"/>
+                    <include name="selectLocation"/>
                 </methods>
             </class>
         </classes>
