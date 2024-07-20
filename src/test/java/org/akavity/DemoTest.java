@@ -70,4 +70,16 @@ public class DemoTest extends BaseTest {
 
         Assert.assertTrue(accountSteps.isCityDisplayed(location.getCityField()));
     }
+
+    @Test
+    public void loginToAccount() {
+        popUpsSteps.clickAllowButton();
+        tabBarSteps.selectTabBarItem("Аккаунт");
+        accountSteps.clickLoginToAccountButton();
+        accountSteps.enterEmail("aprlvni413@1secmail.ru");
+        accountSteps.enterPassword("0e6aaa60");
+        accountSteps.clickLoginToAccountButton();
+
+        Assert.assertTrue(accountSteps.isPhoneNumberDisplayed());
+    }
 }
