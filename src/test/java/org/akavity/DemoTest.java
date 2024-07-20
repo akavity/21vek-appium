@@ -48,7 +48,7 @@ public class DemoTest extends BaseTest {
     }
 
     @TestData(jsonFile = "catalogData", model = "CatalogData")
-    @Test(description = "Moving through the catalog",
+    @Test(description = "Navigating through the catalog",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void moveThroughCatalog(CatalogData catalog) {
         popUpsSteps.clickAllowButton();
@@ -61,7 +61,7 @@ public class DemoTest extends BaseTest {
     }
 
     @TestData(jsonFile = "locationData", model = "LocationData")
-    @Test(description = "Select location",
+    @Test(description = "Select a location",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectLocation(LocationData location) {
         popUpsSteps.clickAllowButton();
@@ -71,13 +71,15 @@ public class DemoTest extends BaseTest {
         Assert.assertTrue(accountSteps.isCityDisplayed(location.getCityField()));
     }
 
-    @Test
-    public void loginToAccount() {
+    @TestData(jsonFile = "accountData", model = "AccountData")
+    @Test(description = "Log into the account",
+            dataProviderClass = JsonReader.class, dataProvider = "getData")
+    public void loginToAccount(AccountData account) {
         popUpsSteps.clickAllowButton();
-        tabBarSteps.selectTabBarItem("Аккаунт");
+        tabBarSteps.selectTabBarItem(account.getItem());
         accountSteps.clickLoginToAccountButton();
-        accountSteps.enterEmail("aprlvni413@1secmail.ru");
-        accountSteps.enterPassword("0e6aaa60");
+        accountSteps.enterEmail(account.getEmail());
+        accountSteps.enterPassword(account.getPassword());
         accountSteps.clickLoginToAccountButton();
 
         Assert.assertTrue(accountSteps.isPhoneNumberDisplayed());
