@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class JsonReader {
+
     @DataProvider
     public Object[][] getData(Method method) throws FileNotFoundException {
         String jsonData = JsonParser.parseReader(new FileReader("src/test/resources/test-data/"

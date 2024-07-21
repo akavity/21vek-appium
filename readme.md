@@ -5,7 +5,7 @@
 * Test 1. Checking promo buttons.
 * Test 2. Checking banner buttons.
 * Test 3. Checking special offer buttons.
-* Test 4. Navigating through the catalog.
+* Test 4. Catalog navigation.
 * Test 5. Selecting a location.
 * Test 6. Log into the account.
 
