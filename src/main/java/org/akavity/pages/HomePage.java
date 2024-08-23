@@ -6,7 +6,6 @@ import io.appium.java_client.AppiumBy;
 import static com.codeborne.selenide.appium.SelenideAppium.$;
 
 public class HomePage {
-
     public SelenideAppiumElement getSpecialOfferChapterField() {
         return $(AppiumBy.xpath("//android.widget.TextView[@text='Все акции']"));
     }

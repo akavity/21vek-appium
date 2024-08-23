@@ -13,7 +13,6 @@ import java.time.Duration;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class Utils {
-
     private static int START_X = 1000;
     private static int END_X = 180;
 

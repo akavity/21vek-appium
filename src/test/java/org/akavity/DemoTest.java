@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 
 
 public class DemoTest extends BaseTest {
-
     PopUpsSteps popUpsSteps = new PopUpsSteps();
     HomeSteps homeSteps = new HomeSteps();
     ProductListSteps productListSteps = new ProductListSteps();

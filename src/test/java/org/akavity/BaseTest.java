@@ -9,7 +9,6 @@ import org.akavity.driver.AndroidDriver;
 import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
-
     @BeforeMethod
     public void setUp() {
         WebDriverRunner.closeWebDriver();

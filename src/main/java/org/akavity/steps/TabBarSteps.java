@@ -8,7 +8,6 @@ import org.akavity.utils.Utils;
 
 @Log4j2
 public class TabBarSteps {
-
     TabBarPage tabBarPage = new TabBarPage();
 
     @Step

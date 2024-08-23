@@ -10,7 +10,6 @@ import static com.codeborne.selenide.appium.AppiumClickOptions.tap;
 
 @Log4j2
 public class HomeSteps {
-
     HomePage home = new HomePage();
 
     @Step

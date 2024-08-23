@@ -10,7 +10,6 @@ import static com.codeborne.selenide.appium.AppiumClickOptions.tap;
 
 @Log4j2
 public class AccountSteps {
-
     AccountPage accountPage = new AccountPage();
 
     @Step

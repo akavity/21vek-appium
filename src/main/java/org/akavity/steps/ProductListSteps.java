@@ -7,7 +7,6 @@ import org.akavity.utils.Utils;
 
 @Log4j2
 public class ProductListSteps {
-
     ProductListPage productList = new ProductListPage();
 
     @Step

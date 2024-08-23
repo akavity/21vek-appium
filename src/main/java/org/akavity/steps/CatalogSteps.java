@@ -9,7 +9,6 @@ import static com.codeborne.selenide.appium.AppiumClickOptions.tap;
 
 @Log4j2
 public class CatalogSteps {
-
     CatalogPage catalogPage = new CatalogPage();
 
     @Step
