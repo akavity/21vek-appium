@@ -20,13 +20,13 @@ public class PopUpsSteps {
     }
 
     @Step
-    public void clickCloseButton() {
-        log.info("Is close button displayed: ");
-        if (popUps.getCloseButton().isDisplayed()) {
-            log.info("Yes. Click close button");
+    public void closeUpdateInfo() {
+        log.info("Is update info displayed: ");
+        if (popUps.getWhatIsNewField().isDisplayed()) {
+            log.info("Yes. Update info id displayed");
             popUps.getCloseButton().click(tap());
         } else {
-            log.info("No");
+            log.info("No. Update info isn't displayed");
         }
     }
 }
