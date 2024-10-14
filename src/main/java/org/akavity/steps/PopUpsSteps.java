@@ -18,4 +18,15 @@ public class PopUpsSteps {
                 .shouldBe(visible)
                 .click(tap());
     }
+
+    @Step
+    public void clickCloseButton() {
+        log.info("Is close button displayed: ");
+        if (popUps.getCloseButton().isDisplayed()) {
+            log.info("Yes. Click close button");
+            popUps.getCloseButton().click(tap());
+        } else {
+            log.info("No");
+        }
+    }
 }
