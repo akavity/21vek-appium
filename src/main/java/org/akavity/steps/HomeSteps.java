@@ -56,11 +56,12 @@ public class HomeSteps {
 
     private void findAndClickElement(SelenideAppiumElement el, int y) {
         int count = 0;
-        Utils.sleep(500);
+        Utils.sleep(1000);
         while (count < 3) {
             if (el.isDisplayed()) {
                 log.info("The item is displayed: Click the item");
                 el.click(tap());
+                break;
             } else {
                 log.info("The item isn't displayed: Swipe");
                 Utils.swipeElementLeft(y);

@@ -21,6 +21,7 @@ public class DemoTest extends BaseTest {
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectPromo(PromoData promoData) {
         popUpsSteps.clickAllowButton();
+        popUpsSteps.closeUpdateInfo();
         homeSteps.clickPromoButton(promoData.getPromo());
 
         Assert.assertTrue(productListSteps.isTitleDisplayed(promoData.getTitle()));
@@ -31,6 +32,7 @@ public class DemoTest extends BaseTest {
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectBanner(BannerData bannerData) {
         popUpsSteps.clickAllowButton();
+        popUpsSteps.closeUpdateInfo();
         homeSteps.clickBannerButton(bannerData.getText());
 
         Assert.assertTrue(homeSteps.isUrlDisplayed(bannerData.getUrl()));
@@ -41,6 +43,7 @@ public class DemoTest extends BaseTest {
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectSpecialOfferButton(SpecialOfferData specialOffer) {
         popUpsSteps.clickAllowButton();
+        popUpsSteps.closeUpdateInfo();
         homeSteps.clickSpecialOfferButton(specialOffer.getOffer());
 
         Assert.assertTrue(homeSteps.isDiscountTypeLabelDisplayed(specialOffer.getLabel()));
@@ -51,6 +54,7 @@ public class DemoTest extends BaseTest {
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void moveThroughCatalog(CatalogData catalog) {
         popUpsSteps.clickAllowButton();
+        popUpsSteps.closeUpdateInfo();
         tabBarSteps.selectTabBarItem(catalog.getItem());
         catalogSteps.clickSectionButton(catalog.getSection());
         catalogSteps.clickSubsectionButton(catalog.getSubsectionFirst());
@@ -64,6 +68,7 @@ public class DemoTest extends BaseTest {
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectLocation(LocationData location) {
         popUpsSteps.clickAllowButton();
+        popUpsSteps.closeUpdateInfo();
         tabBarSteps.selectTabBarItem(location.getItem());
         accountSteps.changeLocation(location.getCityButton());
 
@@ -75,6 +80,7 @@ public class DemoTest extends BaseTest {
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void loginToAccount(AccountData account) {
         popUpsSteps.clickAllowButton();
+        popUpsSteps.closeUpdateInfo();
         tabBarSteps.selectTabBarItem(account.getItem());
         accountSteps.clickLoginToAccountButton();
         accountSteps.enterEmail(account.getEmail());

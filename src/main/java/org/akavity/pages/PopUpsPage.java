@@ -10,7 +10,6 @@ public class PopUpsPage {
     private final SelenideElement closeButton = $(AppiumBy.xpath("//android.widget.Button/com.horcrux.svg.SvgView"));
     private final SelenideElement whatIsNewField = $(AppiumBy.xpath("(//android.widget.TextView[@text='Что нового?'])[2]"));
 
-
     public SelenideElement getAllowButton() {
         return allowButton;
     }
