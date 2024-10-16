@@ -13,8 +13,10 @@ public class DemoTest extends BaseTest {
     HomeSteps homeSteps = new HomeSteps();
     ProductListSteps productListSteps = new ProductListSteps();
     TabBarSteps tabBarSteps = new TabBarSteps();
+    AppBarSteps appBarSteps = new AppBarSteps();
     CatalogSteps catalogSteps = new CatalogSteps();
     AccountSteps accountSteps = new AccountSteps();
+    CartSteps cartSteps = new CartSteps();
 
     @TestData(jsonFile = "promoData", model = "PromoData")
     @Test(description = "Checking promo buttons",
@@ -88,5 +90,19 @@ public class DemoTest extends BaseTest {
         accountSteps.clickLoginToAccountButton();
 
         Assert.assertTrue(accountSteps.isPhoneNumberDisplayed());
+    }
+
+    @TestData(jsonFile = "searchData", model = "SearchData")
+    @Test(description = "Find and add product to cart",
+            dataProviderClass = JsonReader.class, dataProvider = "getData")
+    public void searchProduct(SearchData searchData) {
+        popUpsSteps.clickAllowButton();
+        popUpsSteps.closeUpdateInfo();
+        appBarSteps.clickOnSearchField();
+        appBarSteps.enterTextIntoSearch(searchData.getText());
+        productListSteps.clickFirstAddToCartButton();
+        tabBarSteps.selectTabBarItem(searchData.getItem());
+
+        Assert.assertTrue(cartSteps.isTitleDisplayed(searchData.getTitle()));
     }
 }

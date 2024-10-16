@@ -12,6 +12,7 @@
                     <include name="moveThroughCatalog"/>
                     <include name="selectLocation"/>
                     <include name="loginToAccount"/>
+                    <include name="searchProduct"/>
                 </methods>
             </class>
         </classes>
