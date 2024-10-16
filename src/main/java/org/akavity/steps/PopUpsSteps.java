@@ -3,6 +3,7 @@ package org.akavity.steps;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.akavity.pages.PopUpsPage;
+import org.akavity.utils.Utils;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.appium.AppiumClickOptions.tap;
@@ -21,6 +22,7 @@ public class PopUpsSteps {
 
     @Step
     public void closeUpdateInfo() {
+        Utils.sleep(500);
         log.info("Is update info displayed: ");
         if (popUps.getWhatIsNewField().isDisplayed()) {
             log.info("Yes. Update info id displayed");

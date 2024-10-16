@@ -17,5 +17,10 @@ public class ProductListSteps {
         log.info("Is title displayed: {}", result);
         return result;
     }
-}
 
+    @Step
+    public void clickFirstAddToCartButton() {
+        log.info("Click the first button \"Add to cart\"");
+        productList.getAddToCartButtons().first().click();
+    }
+}
