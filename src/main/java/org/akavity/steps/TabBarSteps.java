@@ -17,4 +17,11 @@ public class TabBarSteps {
         Utils.waitUntilClickable(element);
         element.click();
     }
+
+    @Step
+    public boolean isCartFull(String number) {
+        boolean result = tabBarPage.getCartCounter(number).isDisplayed();
+        log.info("Check if the basket is full: {}", result);
+        return result;
+    }
 }
