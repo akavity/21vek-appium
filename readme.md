@@ -7,7 +7,8 @@
 * Test 3. Catalog navigation.
 * Test 4. Selecting a location.
 * Test 5. Log into the account.
-* Test 6. Find and add product to cart.
+* Test 6. Find and add a product to the cart.
+* Test 7. Select a popular product from the search.
 
 ## Technologies:
 

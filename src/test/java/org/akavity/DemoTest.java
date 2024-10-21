@@ -93,7 +93,7 @@ public class DemoTest extends BaseTest {
     }
 
     @TestData(jsonFile = "searchData", model = "SearchData")
-    @Test(description = "Find and add product to cart",
+    @Test(description = "Find and add a product to the cart",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void searchProduct(SearchData searchData) {
         popUpsSteps.clickAllowButton();
@@ -104,5 +104,17 @@ public class DemoTest extends BaseTest {
         tabBarSteps.selectTabBarItem(searchData.getItem());
 
         Assert.assertTrue(cartSteps.isTitleDisplayed(searchData.getTitle()));
+    }
+
+    @TestData(jsonFile = "popProductData", model = "PopProductData")
+    @Test(description = "Select a popular product from the search",
+            dataProviderClass = JsonReader.class, dataProvider = "getData")
+    public void selectPopularProductFromSearch(PopProductData pop) {
+        popUpsSteps.clickAllowButton();
+        popUpsSteps.closeUpdateInfo();
+        appBarSteps.clickOnSearchField();
+        appBarSteps.clickPopularProduct(pop.getProduct());
+
+        Assert.assertTrue(productListSteps.isTitleDisplayed(pop.getTitle()));
     }
 }
