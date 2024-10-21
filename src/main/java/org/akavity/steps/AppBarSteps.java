@@ -3,7 +3,6 @@ package org.akavity.steps;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.akavity.pages.AppBarPage;
-import org.akavity.utils.Utils;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.appium.AppiumClickOptions.tap;
@@ -25,8 +24,11 @@ public class AppBarSteps {
         appBarPage.getSearchField().click();
         appBarPage.getSearchField().setValue(text);
         appBarPage.getLoupeButton().click();
+    }
 
-
-        Utils.sleep(4000);
+    @Step
+    public void clickPopularProduct(String product) {
+        log.info("Click popular product: {}", product);
+        appBarPage.getPopularProductField(product).click();
     }
 }
