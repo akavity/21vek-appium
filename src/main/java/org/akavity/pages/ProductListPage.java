@@ -18,11 +18,11 @@ public class ProductListPage {
         return $(AppiumBy.xpath("//android.widget.Button[contains(@text,'" + text + "')]"));
     }
 
-    public SelenideAppiumCollection getAddToCartButtons() {
-        return addToCartButtons;
-    }
-
     public SelenideAppiumCollection getAddToFavoritesButton(String text) {
         return $$(AppiumBy.xpath("//android.widget.Button[contains(@content-desc, 'Добавить') and contains( @content-desc, '" + text + "')]"));
+    }
+
+    public SelenideAppiumCollection getAddToCartButtons() {
+        return addToCartButtons;
     }
 }
