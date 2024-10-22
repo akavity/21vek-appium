@@ -13,6 +13,7 @@
                     <include name="selectLocation"/>
                     <include name="loginToAccount"/>
                     <include name="searchProduct"/>
+                    <include name="addProductToFavorites"/>
                 </methods>
             </class>
         </classes>

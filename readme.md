@@ -9,6 +9,7 @@
 * Test 5. Log into the account.
 * Test 6. Find and add a product to the cart.
 * Test 7. Select a popular product from the search.
+* Test 8. Add product to favorites.
 
 ## Technologies:
 

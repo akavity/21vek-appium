@@ -117,4 +117,18 @@ public class DemoTest extends BaseTest {
 
         Assert.assertTrue(productListSteps.isTitleDisplayed(pop.getTitle()));
     }
+
+    @TestData(jsonFile = "favoritesData", model = "FavoritesData")
+    @Test(description = "Add product to favorites",
+            dataProviderClass = JsonReader.class, dataProvider = "getData")
+    public void addProductToFavorites(FavoritesData favorites) {
+        popUpsSteps.clickAllowButton();
+        popUpsSteps.closeUpdateInfo();
+        appBarSteps.clickOnSearchField();
+        appBarSteps.enterTextIntoSearch(favorites.getProductName());
+        productListSteps.clickAddToFavoritesButton(favorites.getProductName());
+        tabBarSteps.selectTabBarItem(favorites.getItem());
+
+        Assert.assertTrue(productListSteps.isTextUnderFigureDisplayed(favorites.getProductName()));
+    }
 }
