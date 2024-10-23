@@ -38,4 +38,10 @@ public class ProductListSteps {
         log.info("Add product to favorites");
         productList.getAddToFavoritesButton(product).first().click();
     }
+
+    @Step
+    public void clickAddToComparisonButton() {
+        log.info("Add to comparison");
+        productList.getAddToComparisonButtons().first().click();
+    }
 }

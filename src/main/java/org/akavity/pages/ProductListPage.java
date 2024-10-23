@@ -9,6 +9,7 @@ import static com.codeborne.selenide.appium.SelenideAppium.$$;
 
 public class ProductListPage {
     private final SelenideAppiumCollection addToCartButtons = $$(AppiumBy.xpath("//android.widget.Button[@content-desc='В корзину']"));
+    private final SelenideAppiumCollection addToComparisonButtons = $$(AppiumBy.xpath("//android.widget.Button[@content-desc]/android.view.ViewGroup[2]"));
 
     public SelenideAppiumElement getTitleField(String text) {
         return $(AppiumBy.xpath("//android.widget.TextView[@text='" + text + "']"));
@@ -24,5 +25,9 @@ public class ProductListPage {
 
     public SelenideAppiumCollection getAddToCartButtons() {
         return addToCartButtons;
+    }
+
+    public SelenideAppiumCollection getAddToComparisonButtons() {
+        return addToComparisonButtons;
     }
 }
