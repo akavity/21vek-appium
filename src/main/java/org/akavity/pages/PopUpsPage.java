@@ -10,6 +10,7 @@ public class PopUpsPage {
     private final SelenideAppiumElement allowButton = $(AppiumBy.id("com.android.permissioncontroller:id/permission_allow_button"));
     private final SelenideAppiumElement closeButton = $(AppiumBy.xpath("//android.widget.Button/com.horcrux.svg.SvgView"));
     private final SelenideAppiumElement whatIsNewField = $(AppiumBy.xpath("(//android.widget.TextView[@text='Что нового?'])[2]"));
+    private final SelenideAppiumElement compareButton = $(AppiumBy.xpath("//android.widget.TextView[@text='Сравнить']"));
 
     public SelenideAppiumElement getAllowButton() {
         return allowButton;
@@ -21,5 +22,9 @@ public class PopUpsPage {
 
     public SelenideAppiumElement getWhatIsNewField() {
         return whatIsNewField;
+    }
+
+    public SelenideAppiumElement getCompareButton() {
+        return compareButton;
     }
 }

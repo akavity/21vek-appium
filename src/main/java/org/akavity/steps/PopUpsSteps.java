@@ -31,4 +31,10 @@ public class PopUpsSteps {
             log.info("No. Update info isn't displayed");
         }
     }
+
+    @Step
+    public void clickCompareButton() {
+        log.info("CLick the compare button");
+        popUps.getCompareButton().shouldBe(visible).click();
+    }
 }
