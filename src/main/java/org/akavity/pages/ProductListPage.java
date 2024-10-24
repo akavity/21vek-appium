@@ -16,7 +16,8 @@ public class ProductListPage {
     }
 
     public SelenideAppiumElement getTextUnderFigure(String text) {
-        return $(AppiumBy.xpath("//android.widget.Button[contains(@text,'" + text + "')]"));
+        return $(AppiumBy.xpath("//android.widget.Button[contains(@text,'" + text + "')] " +
+                "| //android.widget.TextView[contains(@text,'" + text + "')]"));
     }
 
     public SelenideAppiumCollection getAddToFavoritesButton(String text) {
