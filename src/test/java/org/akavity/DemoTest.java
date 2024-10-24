@@ -131,4 +131,19 @@ public class DemoTest extends BaseTest {
 
         Assert.assertTrue(productListSteps.isTextUnderFigureDisplayed(favorites.getProductName()));
     }
+
+    @TestData(jsonFile = "comparisonData", model = "ComparisonData")
+    @Test(description = "Add product to compare",
+            dataProviderClass = JsonReader.class, dataProvider = "getData")
+    public void addProductToCompare(ComparisonData comparison) {
+        popUpsSteps.clickAllowButton();
+        popUpsSteps.closeUpdateInfo();
+        appBarSteps.clickOnSearchField();
+        appBarSteps.clickPopularProduct(comparison.getProductName());
+        productListSteps.clickAddToComparisonButton();
+        popUpsSteps.clickCompareButton();
+
+        Assert.assertTrue(productListSteps.isTitleDisplayed(comparison.getTitle()));
+        Assert.assertTrue(productListSteps.isTextUnderFigureDisplayed(comparison.getText()));
+    }
 }

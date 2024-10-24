@@ -14,6 +14,7 @@
                     <include name="loginToAccount"/>
                     <include name="searchProduct"/>
                     <include name="addProductToFavorites"/>
+                    <include name="addProductToCompare"/>
                 </methods>
             </class>
         </classes>
