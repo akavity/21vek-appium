@@ -15,6 +15,7 @@
                     <include name="searchProduct"/>
                     <include name="addProductToFavorites"/>
                     <include name="addProductToCompare"/>
+                    <include name="selectProductUsingFilters"/>
                 </methods>
             </class>
         </classes>

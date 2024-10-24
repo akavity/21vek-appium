@@ -11,6 +11,7 @@
 * Test 7. Select a popular product from the search.
 * Test 8. Add product to favorites.
 * Test 9. Add product to compare.
+* Test 10. Select a product using filters.
 
 ## Technologies:
 

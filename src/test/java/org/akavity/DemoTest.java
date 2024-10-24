@@ -17,6 +17,7 @@ public class DemoTest extends BaseTest {
     CatalogSteps catalogSteps = new CatalogSteps();
     AccountSteps accountSteps = new AccountSteps();
     CartSteps cartSteps = new CartSteps();
+    FiltersSteps filtersSteps = new FiltersSteps();
 
     @TestData(jsonFile = "promoData", model = "PromoData")
     @Test(description = "Checking promo buttons",
@@ -145,5 +146,22 @@ public class DemoTest extends BaseTest {
 
         Assert.assertTrue(productListSteps.isTitleDisplayed(comparison.getTitle()));
         Assert.assertTrue(productListSteps.isTextUnderFigureDisplayed(comparison.getText()));
+    }
+
+    @TestData(jsonFile = "filtersData", model = "FiltersData")
+    @Test(description = "Select a product using filters",
+            dataProviderClass = JsonReader.class, dataProvider = "getData")
+    public void selectProductUsingFilters(FiltersData filters) {
+        popUpsSteps.clickAllowButton();
+        popUpsSteps.closeUpdateInfo();
+        appBarSteps.clickOnSearchField();
+        appBarSteps.clickPopularProduct(filters.getProductName());
+        filtersSteps.clickFilterButton();
+        filtersSteps.enterMinPrice(filters.getMinPrice());
+        filtersSteps.enterMaxPrice(filters.getMaxPrice());
+        filtersSteps.selectFilterItem(filters.getFilterName(), filters.getItem());
+        filtersSteps.clickApplyButton();
+
+        Assert.assertTrue(filtersSteps.isLabelDisplayed(filters.getLabel()));
     }
 }
