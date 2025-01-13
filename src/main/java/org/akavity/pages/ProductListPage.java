@@ -21,7 +21,7 @@ public class ProductListPage {
     }
 
     public SelenideAppiumCollection getAddToFavoritesButton(String text) {
-        return $$(AppiumBy.xpath("//android.widget.Button[contains(@content-desc, 'Добавить') and contains( @content-desc, '" + text + "')]"));
+        return $$(AppiumBy.xpath("//android.widget.Button[contains(@text,'" + text + "')]/../android.widget.Button//com.horcrux.svg.SvgView"));
     }
 
     public SelenideAppiumCollection getAddToCartButtons() {
