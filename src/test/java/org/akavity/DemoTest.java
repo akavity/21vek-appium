@@ -86,6 +86,7 @@ public class DemoTest extends BaseTest {
         popUpsSteps.closeUpdateInfo();
         tabBarSteps.selectTabBarItem(account.getItem());
         accountSteps.clickLoginToAccountButton();
+        accountSteps.clickEmailButton();
         accountSteps.enterEmail(account.getEmail());
         accountSteps.enterPassword(account.getPassword());
         accountSteps.clickLoginToAccountButton();

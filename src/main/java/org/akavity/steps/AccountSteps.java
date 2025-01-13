@@ -49,6 +49,14 @@ public class AccountSteps {
     }
 
     @Step
+    public void clickEmailButton() {
+        log.info("Click email button");
+        accountPage.getEmailButton()
+                .shouldBe(visible)
+                .click();
+    }
+
+    @Step
     public void enterEmail(String email) {
         log.info("Enter email: {}", email);
         accountPage.getEmailField()

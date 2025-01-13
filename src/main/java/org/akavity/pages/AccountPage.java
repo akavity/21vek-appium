@@ -10,6 +10,7 @@ public class AccountPage {
     private final SelenideAppiumElement selectLocationButton = $(AppiumBy.xpath("//android.widget.Button[@content-desc='Выбор населенного пункта']"));
     private final SelenideAppiumElement saveCityButton = $(AppiumBy.xpath("//android.widget.Button[@content-desc='Сохранить']"));
     private final SelenideAppiumElement loginToAccountButton = $(AppiumBy.xpath("//android.widget.Button[@content-desc='Войти']"));
+    private final SelenideAppiumElement emailButton = $(AppiumBy.xpath("//android.widget.TextView[@text='Почта']"));
     private final SelenideAppiumElement emailField = $(AppiumBy.xpath("//android.widget.EditText[@content-desc='Электронная почта']"));
     private final SelenideAppiumElement passwordField = $(AppiumBy.xpath("//android.widget.EditText[@content-desc='Пароль']"));
     private final SelenideAppiumElement confirmButton = $(AppiumBy.xpath("//android.widget.Button[@content-desc='Подтвердить']"));
@@ -33,6 +34,10 @@ public class AccountPage {
 
     public SelenideAppiumElement getSaveCityButton() {
         return saveCityButton;
+    }
+
+    public SelenideAppiumElement getEmailButton() {
+        return emailButton;
     }
 
     public SelenideAppiumElement getEmailField() {
