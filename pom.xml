@@ -97,6 +97,7 @@
                         </suiteXmlFiles>
                         <testFailureIgnore>true</testFailureIgnore>
                         <argLine>
+                            -Dconsole.encoding=UTF-8
                             -Dfile.encoding=UTF-8
                             -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                         </argLine>
